@@ -1,0 +1,42 @@
+{% extends "ejemplos/ejemplos_base.html" %}
+{% block titulo %}cursos y carreras{% endblock titulo %}
+
+
+{% block contenido_principal %}
+
+<section class="album py-5 bg-light">
+    <div class="container">
+        <!--seccion heading-->
+        <h2 class="h1-reponsive font-weight-bolt text-center my-4">NUESTRAS SALIDAS</h2>
+        <!--seccion description-->
+        <p class="text-center w-responsive mx-auto mb-5">preparamos a todo afisionado de la montaña para cumplir objetivos </p>
+            {% if cursos|length > 0 %}                        
+                    {% for curso in cursos %}
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <img src="" alt="">
+                                <div class="card-body">
+                                    <h3>{{curso.nombre}}</h3>
+                                    <p class="card-text">{{curso.description}}</p>
+                                    <small class="text-muted">{{curso.categoria}}</small>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="row justify-content-center">
+                    <div class="col-4 text-center">
+                        <div class="alert alert-warning role="alert">
+                            <p>no hay cursos disponibles </p>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+    </div>
+    </div>   
+</section>
+       
+{% endblock contenido_principal %}
+
+        

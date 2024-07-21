@@ -1,0 +1,18 @@
+footer {
+    background-color: aqua;
+}
+
+.alert-error {
+    --bs-alert-bg: rgb(0, 255, 55);
+}
+
+
+
+.div-error {
+    color: blueviolet;
+    background-color: aqua;
+}
+
+.alert {
+    background-color: aqua;
+}

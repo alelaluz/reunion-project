@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo  %}Inicio CAC{% endblock titulo  %} </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">     
+    <link rel="stylesheet" href="{% static "ejemplos/css/style.css" %}">
+
+</head>
+<body>
+    <header>
+        <!-- Navbar con Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a href="/"  class="d-flex align-items-center col-md-3 mb-md-0 text-dark text-decoration-none">
+                <img style="width: 60px; height: 40px;" src="https://static.vecteezy.com/system/resources/previews/008/414/532/non_2x/mountain-rock-climbing-cartoon-illustration-with-climber-climbs-wall-or-mountainous-cliff-use-equipment-on-a-nature-landscape-background-vector.jpg" alt="">
+                
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">              
+
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'index' %}">Inicio<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'curso' 2003 %}">Salidas y Cursos</a>
+                    </li>
+                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'quienes_somos' %}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Administracion</a>
+                    </li>
+                </ul>
+                <div class="col-md-3 text-end">
+                    <a type="button" class="btn btn-outline-primary me-2" href="">Iniciar secion</a>
+                    <a type="button" class="btn btn-outline-primary me-2" href="">Registro</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-shrink-0">
+        {% block contenido_principal %}
+
+        {% endblock contenido_principal %}        
+    </main>
+
+    <footer class="text-center py-3 mt-4">
+        <!-- Footer con Bootstrap -->
+        <p>&copy; 2024 Mi Sitio. Todos los derechos reservados.</p>
+    </footer>
+
+    
+</body>
+</html>
